@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Sign Up</title>
+    <script>
+        function validateForm() {
+            var username = document.forms["signupForm"]["uname"].value;
+            var password = document.forms["signupForm"]["pword"].value;
+            var confirmPassword = document.forms["signupForm"]["confirm_pword"].value;
+
+            if (username  "") {
+                alert("Username must be filled out");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Password must be filled out");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            alert("Signup successful!"); // You can replace this with your signup logic
+        }
+    </script>
+</head>
+<body>
+    <br><br>
+    <center>
+        <h2>Sign Up</h2>
+        <form name="signupForm" onsubmit="return validateForm()">
+            <label>Username</label><br>
+            <input type="text" name="uname" placeholder="Username"><br>
+            <label>Password</label><br>
+            <input type="password" name="pword" placeholder="Password"><br>
+            <label>Confirm Password</label><br>
+            <input type="password" name="confirm_pword" placeholder="Confirm Password"><br>
+            <button type="submit">Sign Up</button><br>
+            <a href="index.html" class="ca">Already have an account? Login</a><br>
+        </form>
+    </center>
+</body>
+</html>
